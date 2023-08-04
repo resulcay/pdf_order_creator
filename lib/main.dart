@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/invoice.dart';
 import 'package:pdf_order_creator/constants/locale_constants.dart';
-import 'package:pdf_order_creator/home_page.dart';
 import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/service/theme_service.dart';
 
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       onGenerateTitle: (context) => LocaleKeys.title.tr(),
       theme: ThemeService.themeConfiguration(context),
-      home: const HomePage(),
+      //  home: const HomePage(),
+      home: const PDFView(),
     );
   }
 }

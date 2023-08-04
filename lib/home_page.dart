@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const ToggleButton(),
-                  const SizedBox(height: 200)
+                  const SizedBox(height: 200),
                 ],
               ),
             ),
