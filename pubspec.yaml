@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   easy_localization: ^3.0.2
   flutter_svg: ^2.0.5
+  pdf: ^3.10.1
 
   cupertino_icons: ^1.0.2
 

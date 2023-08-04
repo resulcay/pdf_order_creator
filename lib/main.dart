@@ -11,11 +11,11 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [
-        LocaleConstants.trLocale,
+        LocaleConstants.enLocale,
         LocaleConstants.deLocale,
       ],
       path: LocaleConstants.TRANSLATION_PATH,
-      fallbackLocale: LocaleConstants.trLocale,
+      fallbackLocale: LocaleConstants.enLocale,
       child: const MyApp(),
     ),
   );
