@@ -3,6 +3,7 @@ import 'package:pdf_order_creator/components/custom_animate_border.dart';
 
 class AnimatedTextField extends StatefulWidget {
   final String label;
+  final TextEditingController textController;
   final int? maxLines;
   final Widget? suffix;
   const AnimatedTextField({
@@ -10,6 +11,7 @@ class AnimatedTextField extends StatefulWidget {
     required this.label,
     this.suffix,
     this.maxLines,
+    required this.textController,
   }) : super(key: key);
 
   @override
@@ -59,6 +61,7 @@ class _AnimatedTextFieldState extends State<AnimatedTextField>
         child: CustomPaint(
           painter: CustomAnimateBorder(alpha.value),
           child: TextField(
+            controller: widget.textController,
             focusNode: focusNode,
             maxLines: widget.maxLines,
             decoration: InputDecoration(

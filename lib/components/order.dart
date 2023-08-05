@@ -75,7 +75,7 @@ class _PDFViewState extends State<PDFView> {
                     margin: pdfprefix.EdgeInsets.symmetric(vertical: 10),
                     color: PdfColors.black,
                   ),
-                  pdfprefix.Text("My Cat",
+                  pdfprefix.Text("Hayri Canı",
                       style: pdfprefix.TextStyle(
                           fontSize: 25, fontWeight: pdfprefix.FontWeight.bold)),
                   pdfprefix.Text("Follow on Medium, LinkedIn, GitHub",
