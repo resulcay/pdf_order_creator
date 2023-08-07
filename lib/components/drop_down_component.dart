@@ -1,48 +1,66 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/constants/color_constants.dart';
+import 'package:pdf_order_creator/enums/color_type_enum.dart';
+import 'package:provider/provider.dart';
 
 class DropDownComponent extends StatefulWidget {
-  final void Function(String period) onPeriodSelected;
-
-  const DropDownComponent({
-    super.key,
-    required this.onPeriodSelected,
-  });
+  const DropDownComponent({super.key});
 
   @override
   State<DropDownComponent> createState() => _DropDownComponentState();
 }
 
 class _DropDownComponentState extends State<DropDownComponent> {
-  String? notificationPeriod;
+  String? text;
 
-  void _updatePeriod(String? period) {
-    if (notificationPeriod != null) {
-      widget.onPeriodSelected.call(notificationPeriod!);
-    }
+  void _updatePeriod(String? value) {
+    setState(() {
+      text = value;
+      switch (value) {
+        case 'Single':
+          Provider.of<ColorTypeProvider>(context, listen: false)
+              .changeColor(ColorType.Single);
+          break;
+        case 'Double':
+          Provider.of<ColorTypeProvider>(context, listen: false)
+              .changeColor(ColorType.Double);
+          break;
+        case 'Metallic':
+          Provider.of<ColorTypeProvider>(context, listen: false)
+              .changeColor(ColorType.Metallic);
+          break;
+        default:
+      }
+    });
   }
 
-  List<String> items = ['Common', 'Pro', 'Metallic'];
+  List<ColorType> colorTypes = ColorType.values;
+
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
-      hint: const Text('Select Color Type'),
-      borderRadius: BorderRadius.circular(10),
-      icon: const Icon(
-        Icons.arrow_drop_down_circle_outlined,
+      isExpanded: true,
+      hint: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Text('Select Color Type'),
       ),
+      borderRadius: BorderRadius.circular(10),
+      icon: const Icon(Icons.keyboard_arrow_down_sharp),
       dropdownColor: ColorConstants.primaryColor,
-      value: notificationPeriod,
-      items: items.map((String period) {
+      value: text,
+      items: colorTypes.map((ColorType value) {
         return DropdownMenuItem(
-          value: period,
-          child: Text(
-            period,
+          value: value.name,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              value.name,
+            ),
           ),
         );
       }).toList(),
-      onChanged: _updatePeriod,
+      onChanged: (value) => _updatePeriod(value),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/constants/locale_constants.dart';
 import 'package:pdf_order_creator/home_page.dart';
@@ -11,8 +12,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ModelProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ModelProvider()),
+        ChangeNotifierProvider(create: (_) => ColorTypeProvider()),
+      ],
       child: EasyLocalization(
         supportedLocales: const [
           LocaleConstants.enLocale,

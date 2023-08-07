@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/enums/model_enum.dart';
 import 'package:pdf_order_creator/service/path_service.dart';
@@ -23,6 +24,8 @@ class _ToggleButtonState extends State<ToggleButton> {
       width: double.infinity,
       child: ToggleButtons(
         onPressed: (int index) {
+          Provider.of<ColorTypeProvider>(context, listen: false)
+              .changeColor(null);
           setState(() {
             // The button that is tapped is set to true, and the others to false.
             for (int i = 0; i < widget.myItems.length; i++) {
