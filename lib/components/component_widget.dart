@@ -9,15 +9,20 @@ class ComponentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Card(
-            color: Theme.of(context).highlightColor,
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Extra Components',
-                style: TextStyle(fontSize: 16),
+        SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Card(
+              color: Theme.of(context).highlightColor,
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Center(
+                  child: Text(
+                    'Extra Components',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                ),
               ),
             ),
           ),
@@ -28,11 +33,14 @@ class ComponentWidget extends StatelessWidget {
               (index) => Column(
                     children: [
                       SelectBox(
-                          componentName: Component.wildDropExtra[index].name,
-                          description:
-                              Component.wildDropExtra[index].description,
-                          imagePath: Component.wildDropExtra[index].imagePath ??
-                              'wild drop.png'),
+                        componentName: Component.wildDropExtra[index].name,
+                        description: Component.wildDropExtra[index].description,
+                        imagePath: Component.wildDropExtra[index].imagePath ??
+                            'wild drop.png',
+                        price: Component.wildDropExtra[index].price,
+                        onBoolSelected: (value) =>
+                            Component.wildDropExtra[index].isSelected = value,
+                      ),
                       const Divider(),
                     ],
                   )),

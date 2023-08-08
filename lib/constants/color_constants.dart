@@ -16,6 +16,11 @@ class ColorConstants {
     n05White,
     n407Manhattan,
   ];
+  static const List<String> normalTonesNames = [
+    '01 White',
+    '05 White',
+    '407 Manhattan',
+  ];
 
   // pro tones
   static const p43Black = Color(0xff1d1d1b);
@@ -40,6 +45,18 @@ class ColorConstants {
     p33Blue,
     p571Red,
   ];
+  static const List<String> proTonesNames = [
+    '43 Black',
+    '23 Brown',
+    '27 Brown',
+    '15 Yellow',
+    '17 Yellow',
+    '740 Orange',
+    '53 Orange',
+    '312 Green',
+    '33 Blue',
+    '571 Red',
+  ];
 
   // metallic tones.
   static const m101Pearl = Color(0xfff2efed);
@@ -50,5 +67,11 @@ class ColorConstants {
     m101Pearl,
     mA1356Gold,
     mA1380Silver,
+  ];
+
+  static const List<String> metallicTonesNames = [
+    '101 Pearl',
+    'A-1356 Gold',
+    'A-1380 Silver',
   ];
 }

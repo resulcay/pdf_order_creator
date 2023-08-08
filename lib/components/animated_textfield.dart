@@ -6,12 +6,14 @@ class AnimatedTextField extends StatefulWidget {
   final TextEditingController textController;
   final int? maxLines;
   final Widget? suffix;
+  final String? Function(String?)? function;
   const AnimatedTextField({
     Key? key,
     required this.label,
     this.suffix,
     this.maxLines,
     required this.textController,
+    this.function,
   }) : super(key: key);
 
   @override
@@ -60,7 +62,8 @@ class _AnimatedTextFieldState extends State<AnimatedTextField>
                 Theme.of(context).colorScheme.copyWith(primary: Colors.cyan)),
         child: CustomPaint(
           painter: CustomAnimateBorder(alpha.value),
-          child: TextField(
+          child: TextFormField(
+            validator: widget.function,
             controller: widget.textController,
             focusNode: focusNode,
             maxLines: widget.maxLines,

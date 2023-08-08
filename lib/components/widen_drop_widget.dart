@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_order_creator/components/select_box.dart';
 
 class WidenDropWidget extends StatelessWidget {
   const WidenDropWidget({
@@ -23,21 +22,21 @@ class WidenDropWidget extends StatelessWidget {
             ),
           ),
         ),
-        const SelectBox(
-            componentName: 'Component A',
-            description:
-                'Some definite expressions here to be more clear Some definite expressions here to be more ',
-            imagePath: 'widen drop.png'),
-        const SelectBox(
-            componentName: 'Component B',
-            description:
-                'Some definite expressions here to be more clear Some definite expressions here to be more ',
-            imagePath: 'widen drop.png'),
-        const SelectBox(
-            componentName: 'Component C',
-            description:
-                'Some definite expressions here to be more clear Some definite expressions here to be more ',
-            imagePath: 'widen drop.png'),
+        // const SelectBox(
+        //     componentName: 'Component A',
+        //     description:
+        //         'Some definite expressions here to be more clear Some definite expressions here to be more ',
+        //     imagePath: 'widen drop.png'),
+        // const SelectBox(
+        //     componentName: 'Component B',
+        //     description:
+        //         'Some definite expressions here to be more clear Some definite expressions here to be more ',
+        //     imagePath: 'widen drop.png'),
+        // const SelectBox(
+        //     componentName: 'Component C',
+        //     description:
+        //         'Some definite expressions here to be more clear Some definite expressions here to be more ',
+        //     imagePath: 'widen drop.png'),
       ],
     );
   }
