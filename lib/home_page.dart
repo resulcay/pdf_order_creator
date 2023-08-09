@@ -37,186 +37,108 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 640,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Transform.translate(
+                            offset: const Offset(-20, 0),
+                            child: Image.asset(
+                                height: 50,
+                                PathService.imagePathProvider('caravan.png')),
                           ),
                         ),
-                        child: Column(
-                          children: [
-                            const Center(
-                              child: SizedBox(
-                                height: 100,
-                                width: 250,
-                                child: Text(
-                                    textAlign: TextAlign.center,
-                                    '''Producer: DROP CAMP KARAVAN LTD. ŞTİ. DROP CAMP WILD DROP AKSARAY-TÜRKİYE Tel: +90 382 3330003  Fax: +90 382 3330004 info@drop-camp.com'''),
-                              ),
-                            ),
-                            const Divider(color: Colors.black),
-                            SizedBox(
-                              height: 100,
-                              child: Row(
-                                children: const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text('Customer Information'),
-                                  ),
-                                  Spacer(),
-                                  VerticalDivider(color: Colors.black),
-                                  Text('''Date:
-Order Number:
-Customer Number''')
-                                ],
-                              ),
-                            ),
-                            const Divider(),
-                            SizedBox(
-                              height: 20,
-                              child: Row(
-                                children: const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text('NameSurname'),
-                                  ),
-                                  Spacer(),
-                                  VerticalDivider(
-                                    color: Colors.black,
-                                  ),
-                                  Text('Phone'),
-                                  Spacer()
-                                ],
-                              ),
-                            ),
-                            const Divider(color: Colors.black),
-                            SizedBox(
-                              height: 20,
-                              child: Row(
-                                children: const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text('Address            '),
-                                  ),
-                                  Spacer(),
-                                  VerticalDivider(
-                                    color: Colors.black,
-                                  ),
-                                  Text('E-mail'),
-                                  Spacer()
-                                ],
-                              ),
-                            ),
-                            const Divider(),
-                          ],
+                        const Spacer(),
+                        LanguageButton(
+                          locale: LocaleConstants.enLocale,
+                          path: 'gb',
+                          ctx: context,
                         ),
-                      ),
-                    )
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.end,
-                    //   children: [
-                    //     Padding(
-                    //       padding: const EdgeInsets.only(bottom: 8),
-                    //       child: Transform.translate(
-                    //         offset: const Offset(-20, 0),
-                    //         child: Image.asset(
-                    //             height: 50,
-                    //             PathService.imagePathProvider('caravan.png')),
-                    //       ),
-                    //     ),
-                    //     const Spacer(),
-                    //     LanguageButton(
-                    //       locale: LocaleConstants.enLocale,
-                    //       path: 'gb',
-                    //       ctx: context,
-                    //     ),
-                    //     LanguageButton(
-                    //       locale: LocaleConstants.deLocale,
-                    //       path: 'de',
-                    //       ctx: context,
-                    //     ),
-                    //   ],
-                    // ),
-                    // AnimatedTextField(
-                    //   label: "Name",
-                    //   textController: nameController,
-                    //   function: (text) {
-                    //     text = text?.trim();
-                    //     if (text == null || text.isEmpty) {
-                    //       return 'Can not be empty';
-                    //     }
-                    //     return null;
-                    //   },
-                    // ),
-                    // AnimatedTextField(
-                    //   label: "Surname",
-                    //   textController: surnameController,
-                    //   function: (text) {
-                    //     text = text?.trim();
-                    //     if (text == null || text.isEmpty) {
-                    //       return 'Can not be empty';
-                    //     }
-                    //     return null;
-                    //   },
-                    // ),
-                    // AnimatedTextField(
-                    //   label: "E-mail",
-                    //   textController: emailController,
-                    //   function: (text) {
-                    //     text = text?.trim();
-                    //     if (text == null || text.isEmpty) {
-                    //       return 'Can not be empty';
-                    //     }
-                    //     return null;
-                    //   },
-                    // ),
-                    // AnimatedTextField(
-                    //   label: "Phone Number",
-                    //   textController: phoneController,
-                    //   function: (text) {
-                    //     text = text?.trim();
-                    //     if (text == null || text.isEmpty) {
-                    //       return 'Can not be empty';
-                    //     }
-                    //     return null;
-                    //   },
-                    // ),
-                    // AnimatedTextField(
-                    //   label: "Address",
-                    //   textController: addressController,
-                    //   function: (text) {
-                    //     text = text?.trim();
-                    //     if (text == null || text.isEmpty) {
-                    //       return 'Can not be empty';
-                    //     }
-                    //     return null;
-                    //   },
-                    //   maxLines: 4,
-                    // ),
-                    // const SizedBox(height: 20),
-                    // ToggleButton(myItems: myItems),
-                    // const SizedBox(height: 20),
-                    // Consumer<ModelProvider>(
-                    //   builder: (context, value, child) {
-                    //     switch (value.model) {
-                    //       case Model.none:
-                    //         return const Text(
-                    //           'Please Select Model!',
-                    //           style: TextStyle(fontSize: 17),
-                    //         );
-                    //       case Model.wildDrop:
-                    //         return const WildDropWidget();
-                    //       case Model.widenDrop:
-                    //         return const WidenDropWidget();
-                    //       default:
-                    //         return const SizedBox.shrink();
-                    //     }
-                    //   },
-                    // ),
-                    // const SizedBox(height: 20),
-                    ,
+                        LanguageButton(
+                          locale: LocaleConstants.deLocale,
+                          path: 'de',
+                          ctx: context,
+                        ),
+                      ],
+                    ),
+                    AnimatedTextField(
+                      label: "Name",
+                      textController: nameController,
+                      function: (text) {
+                        text = text?.trim();
+                        if (text == null || text.isEmpty) {
+                          return 'Can not be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    AnimatedTextField(
+                      label: "Surname",
+                      textController: surnameController,
+                      function: (text) {
+                        text = text?.trim();
+                        if (text == null || text.isEmpty) {
+                          return 'Can not be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    AnimatedTextField(
+                      label: "E-mail",
+                      textController: emailController,
+                      function: (text) {
+                        text = text?.trim();
+                        if (text == null || text.isEmpty) {
+                          return 'Can not be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    AnimatedTextField(
+                      label: "Phone Number",
+                      textController: phoneController,
+                      function: (text) {
+                        text = text?.trim();
+                        if (text == null || text.isEmpty) {
+                          return 'Can not be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    AnimatedTextField(
+                      label: "Address",
+                      textController: addressController,
+                      function: (text) {
+                        text = text?.trim();
+                        if (text == null || text.isEmpty) {
+                          return 'Can not be empty';
+                        }
+                        return null;
+                      },
+                      maxLines: 4,
+                    ),
+                    const SizedBox(height: 20),
+                    ToggleButton(myItems: myItems),
+                    const SizedBox(height: 20),
+                    Consumer<ModelProvider>(
+                      builder: (context, value, child) {
+                        switch (value.model) {
+                          case Model.none:
+                            return const Text(
+                              'Please Select Model!',
+                              style: TextStyle(fontSize: 17),
+                            );
+                          case Model.wildDrop:
+                            return const WildDropWidget();
+                          case Model.widenDrop:
+                            return const WidenDropWidget();
+                          default:
+                            return const SizedBox.shrink();
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 20),
                     BottomSection(
                       formKey: formKey,
                       name: nameController,
