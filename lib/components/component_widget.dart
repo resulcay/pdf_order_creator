@@ -3,7 +3,8 @@ import 'package:pdf_order_creator/components/select_box.dart';
 import 'package:pdf_order_creator/models/component_model.dart';
 
 class ComponentWidget extends StatelessWidget {
-  const ComponentWidget({super.key});
+  final List<Component> components;
+  const ComponentWidget({super.key, required this.components});
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +34,13 @@ class ComponentWidget extends StatelessWidget {
               (index) => Column(
                     children: [
                       SelectBox(
-                        componentName: Component.wildDropExtra[index].name,
-                        description: Component.wildDropExtra[index].description,
-                        imagePath: Component.wildDropExtra[index].imagePath ??
-                            'wild drop.png',
-                        price: Component.wildDropExtra[index].price,
+                        componentName: components[index].name,
+                        description: components[index].description,
+                        imagePath:
+                            components[index].imagePath ?? 'wild drop.png',
+                        price: components[index].price,
                         onBoolSelected: (value) =>
-                            Component.wildDropExtra[index].isSelected = value,
+                            components[index].isSelected = value,
                       ),
                       const Divider(),
                     ],

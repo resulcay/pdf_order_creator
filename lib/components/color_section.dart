@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/color_circle.dart';
+import 'package:pdf_order_creator/components/color_name_provider.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/components/component_widget.dart';
+import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/constants/color_constants.dart';
 import 'package:pdf_order_creator/enums/color_type_enum.dart';
+import 'package:pdf_order_creator/enums/model_enum.dart';
+import 'package:pdf_order_creator/models/component_model.dart';
 import 'package:provider/provider.dart';
 
 class ColorSection extends StatefulWidget {
@@ -18,14 +22,30 @@ class _ColorSectionState extends State<ColorSection> {
   Color doubleBodyColor = ColorConstants.p43Black;
   Color doubleFrameColor = ColorConstants.p43Black;
   Color metallicColor = ColorConstants.m101Pearl;
-  String normalColorName = ColorConstants.normalTonesNames[0];
-  String doubleBodyColorName = ColorConstants.proTonesNames[0];
-  String doubleFrameColorName = ColorConstants.proTonesNames[0];
-  String metallicColorName = ColorConstants.metallicTonesNames[0];
-
+  List<Component> componentList = [];
   @override
   Widget build(BuildContext context) {
     ColorType? colorType = Provider.of<ColorTypeProvider>(context).colorType;
+    Model model = Provider.of<ModelProvider>(context).model;
+
+    switch (model) {
+      case Model.wildDrop:
+        componentList = Component.wildDropExtra;
+        break;
+      case Model.widenDrop:
+        componentList = Component.widenDropExtra;
+        break;
+      default:
+    }
+
+    String normalColorName =
+        Provider.of<ColorNameProvider>(context).normalColorName;
+    String doubleBodyColorName =
+        Provider.of<ColorNameProvider>(context).doubleBodyColorName;
+    String doubleFrameColorName =
+        Provider.of<ColorNameProvider>(context).doubleFrameColorName;
+    String metallicColorName =
+        Provider.of<ColorNameProvider>(context).metallicColorName;
 
     if (colorType != null) {
       switch (colorType) {
@@ -48,11 +68,11 @@ class _ColorSectionState extends State<ColorSection> {
                       colors: ColorConstants.normalTones,
                       onColorSelected: (value) {
                         int index = ColorConstants.normalTones.indexOf(value);
-
+                        Provider.of<ColorNameProvider>(context, listen: false)
+                            .changeNormalColorName(
+                                ColorConstants.normalTonesNames[index]);
                         setState(() {
                           singleColor = value;
-                          normalColorName =
-                              ColorConstants.normalTonesNames[index];
                         });
                       },
                     ),
@@ -76,7 +96,7 @@ class _ColorSectionState extends State<ColorSection> {
                   ],
                 ),
               ),
-              const ComponentWidget()
+              ComponentWidget(components: componentList)
             ],
           );
         case ColorType.Double:
@@ -114,10 +134,12 @@ class _ColorSectionState extends State<ColorSection> {
                               onColorSelected: (value) {
                                 int index =
                                     ColorConstants.proTones.indexOf(value);
+                                Provider.of<ColorNameProvider>(context,
+                                        listen: false)
+                                    .changeDoubleBodyColorName(
+                                        ColorConstants.proTonesNames[index]);
                                 setState(() {
                                   doubleBodyColor = value;
-                                  doubleBodyColorName =
-                                      ColorConstants.proTonesNames[index];
                                 });
                               },
                             ),
@@ -149,10 +171,12 @@ class _ColorSectionState extends State<ColorSection> {
                               onColorSelected: (value) {
                                 int index =
                                     ColorConstants.proTones.indexOf(value);
+                                Provider.of<ColorNameProvider>(context,
+                                        listen: false)
+                                    .changeDoubleFrameColorName(
+                                        ColorConstants.proTonesNames[index]);
                                 setState(() {
                                   doubleFrameColor = value;
-                                  doubleFrameColorName =
-                                      ColorConstants.proTonesNames[index];
                                 });
                               },
                             ),
@@ -181,7 +205,7 @@ class _ColorSectionState extends State<ColorSection> {
                   ],
                 ),
               ),
-              const ComponentWidget()
+              ComponentWidget(components: componentList)
             ],
           );
         case ColorType.Metallic:
@@ -201,10 +225,11 @@ class _ColorSectionState extends State<ColorSection> {
                     colors: ColorConstants.metallicTones,
                     onColorSelected: (value) {
                       int index = ColorConstants.metallicTones.indexOf(value);
+                      Provider.of<ColorNameProvider>(context, listen: false)
+                          .changeMetallicColorName(
+                              ColorConstants.metallicTonesNames[index]);
                       setState(() {
                         metallicColor = value;
-                        metallicColorName =
-                            ColorConstants.metallicTonesNames[index];
                       });
                     },
                   ),
@@ -226,7 +251,7 @@ class _ColorSectionState extends State<ColorSection> {
                   const Spacer(),
                 ],
               ),
-              const ComponentWidget()
+              ComponentWidget(components: componentList)
             ],
           );
 

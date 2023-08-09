@@ -54,7 +54,7 @@ class _SelectBoxState extends State<SelectBox> {
                       ),
                     ),
                     Image.asset(
-                        height: 100,
+                        height: 80,
                         alignment: Alignment.centerLeft,
                         PathService.imagePathProvider(widget.imagePath)),
                   ],

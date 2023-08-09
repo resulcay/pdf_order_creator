@@ -465,6 +465,7 @@ class Component {
       'ALKO Shock Absorber (2 Pieces)',
       '400',
       false,
+      imagePath: 'alko impact.png',
     ),
     Component(
       'DRP-MO-1203',
@@ -472,6 +473,7 @@ class Component {
       'Alko Stabilizer',
       '700',
       false,
+      imagePath: 'alko stabilizer.png',
     ),
     Component(
       'DRP-MO-1204',
@@ -479,6 +481,7 @@ class Component {
       'THULE Stairs ( 2PCS )',
       '550',
       false,
+      imagePath: 'stairs.png',
     ),
     Component(
       'DRP-MO-1305',
@@ -486,6 +489,7 @@ class Component {
       'DOMETIC REFRIGERATOR (14L)',
       '299',
       false,
+      imagePath: 'dometic refrigerator.png',
     ),
     Component(
       'DRP-MO-1306',
@@ -495,18 +499,12 @@ class Component {
       false,
     ),
     Component(
-      'DRP-MO-1207',
-      'Double Color',
-      'DUAL COLOR EXTERIOR BODY',
-      '799',
-      false,
-    ),
-    Component(
       'DRP-MO-1508',
       'Exterior Lighting',
       'JOKON ENVIRONMENT AND EXTERIOR LIGHTING',
       '150',
       false,
+      imagePath: 'exterior lighting.png',
     ),
     Component(
       'DRP-MO-1209',
@@ -521,6 +519,7 @@ class Component {
       'Outdoor Shower System',
       '200',
       false,
+      imagePath: 'shower system.png',
     ),
     Component(
       'DRP-MO-1211',
@@ -528,6 +527,7 @@ class Component {
       'Outdoor Shower Tent',
       '75',
       false,
+      imagePath: 'shower tent.png',
     ),
     Component(
       'DRP-MO-1512',
@@ -535,6 +535,7 @@ class Component {
       'Portable Flexible Solar Panel 12 V 200 Watt SET',
       '2000',
       false,
+      imagePath: 'solar panel.jpeg',
     ),
     Component(
       'DRP-MO-1513',
@@ -542,6 +543,7 @@ class Component {
       'DOMETIC VENTILATION',
       '375',
       false,
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-MO-1514',
@@ -549,6 +551,7 @@ class Component {
       'TYT BRAND SQUARE BRAND VENTILATION',
       '150',
       false,
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-MO-1515',
@@ -556,6 +559,7 @@ class Component {
       'TRUMA 4E COMBI',
       '2750',
       false,
+      imagePath: 'combi.png',
     ),
     Component(
       'DRP-MO-1316',
@@ -563,6 +567,7 @@ class Component {
       'DOMETIC COOK SINK AND FOLDING FAUCET',
       '850',
       false,
+      imagePath: 'dometic kitchen.png',
     ),
     Component(
       'DRP-MO-1217',
@@ -577,19 +582,13 @@ class Component {
       'CAN Double Burner Cooker and Gas Installation',
       '625',
       false,
+      imagePath: 'cook sink.png',
     ),
     Component(
       'DRP-MO-1219',
       'Off-Road Bars',
       'Off-road Aggressive Protection Bars',
       '200',
-      false,
-    ),
-    Component(
-      'DRP-MO-1220',
-      'Color',
-      'METALLIC SPECIAL COLOR',
-      '1750',
       false,
     ),
     Component(
@@ -626,6 +625,7 @@ class Component {
       'Truma Term TT WATER HEATING SYSTEM',
       '399',
       false,
+      imagePath: 'water heating system.png',
     ),
     Component(
       'DRP-MO-1426',
@@ -633,6 +633,7 @@ class Component {
       'FULL SET + ASSEMBLY WITH 60 LT TANK',
       '399',
       false,
+      imagePath: 'water system.png',
     ),
     Component(
       'DRP-MO-1327',

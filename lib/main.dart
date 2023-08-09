@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/color_name_provider.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/constants/locale_constants.dart';
@@ -16,6 +17,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => ModelProvider()),
         ChangeNotifierProvider(create: (_) => ColorTypeProvider()),
+        ChangeNotifierProvider(create: (_) => ColorNameProvider()),
       ],
       child: EasyLocalization(
         supportedLocales: const [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_order_creator/components/color_name_provider.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/components/order.dart';
@@ -28,6 +29,14 @@ class BottomSection extends StatelessWidget {
   Widget build(BuildContext context) {
     Model model = Provider.of<ModelProvider>(context).model;
     ColorType? colorType = Provider.of<ColorTypeProvider>(context).colorType;
+    String normalColorName =
+        Provider.of<ColorNameProvider>(context).normalColorName;
+    String doubleBodyColorName =
+        Provider.of<ColorNameProvider>(context).doubleBodyColorName;
+    String doubleFrameColorName =
+        Provider.of<ColorNameProvider>(context).doubleFrameColorName;
+    String metallicColorName =
+        Provider.of<ColorNameProvider>(context).metallicColorName;
 
     return OutlinedButton(
       onPressed: () {
@@ -45,7 +54,7 @@ class BottomSection extends StatelessWidget {
                     Component component = Component(
                       'no code',
                       'Single Color',
-                      'SINGLE COLOR EXTERIOR BODY',
+                      'SINGLE COLOR EXTERIOR BODY($normalColorName)',
                       '0',
                       true,
                     );
@@ -58,7 +67,7 @@ class BottomSection extends StatelessWidget {
                     Component component = Component(
                       'DRP-ORO-07',
                       'Double Color',
-                      'DUAL COLOR EXTERIOR BODY',
+                      'DUAL COLOR EXTERIOR BODY(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
                       '799',
                       true,
                     );
@@ -70,7 +79,7 @@ class BottomSection extends StatelessWidget {
                     Component component = Component(
                       'DRP-ORO-20',
                       'Color',
-                      'METALLIC SPECIAL COLOR',
+                      'METALLIC SPECIAL COLOR($metallicColorName)',
                       '1750',
                       true,
                     );
@@ -102,7 +111,7 @@ class BottomSection extends StatelessWidget {
                     Component component = Component(
                       'no code',
                       'Single Color',
-                      'SINGLE COLOR EXTERIOR BODY',
+                      'SINGLE COLOR EXTERIOR BODY($normalColorName)',
                       '0',
                       true,
                     );
@@ -113,9 +122,9 @@ class BottomSection extends StatelessWidget {
                     break;
                   case ColorType.Double:
                     Component component = Component(
-                      'DRP-ORO-07',
+                      'DRP-MO-1207',
                       'Double Color',
-                      'DUAL COLOR EXTERIOR BODY',
+                      'DUAL COLOR EXTERIOR BODY(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
                       '799',
                       true,
                     );
@@ -125,9 +134,9 @@ class BottomSection extends StatelessWidget {
                     break;
                   case ColorType.Metallic:
                     Component component = Component(
-                      'DRP-ORO-20',
+                      'DRP-MO-1220',
                       'Color',
-                      'METALLIC SPECIAL COLOR',
+                      'METALLIC SPECIAL COLOR($metallicColorName)',
                       '1750',
                       true,
                     );
