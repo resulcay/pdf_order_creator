@@ -114,7 +114,7 @@ class BottomSection extends StatelessWidget {
                     Component component = Component(
                       LocaleKeys.noCode.tr(),
                       LocaleKeys.singleColor.tr(),
-                      '${LocaleKeys.singleColor.tr().toUpperCase()} ${LocaleKeys.exterior.tr()}($normalColorName)',
+                      '${LocaleKeys.singleColor.tr().toUpperCase()} ${LocaleKeys.exterior}($normalColorName)',
                       '0',
                       true,
                     );

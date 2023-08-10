@@ -164,14 +164,14 @@ ${LocaleKeys.customerNumber.tr()}: aaa-aaa-aaa
                               child: pdf.Center(
                                 child: pdf.Text(LocaleKeys.number.tr(),
                                     style: pdf.TextStyle(
-                                        font: font, fontSize: 15)),
+                                        font: font, fontSize: 13)),
                               )),
                           pdf.SizedBox(
                               width: 45 * PdfPageFormat.mm,
                               child: pdf.Center(
                                 child: pdf.Text(LocaleKeys.product.tr(),
                                     style: pdf.TextStyle(
-                                        font: font, fontSize: 15)),
+                                        font: font, fontSize: 13)),
                               )),
                           pdf.SizedBox(
                               width: 105 * PdfPageFormat.mm,
@@ -312,14 +312,14 @@ ${LocaleKeys.customerNumber.tr()}: aaa-aaa-aaa
                               child: pdf.Center(
                                 child: pdf.Text(LocaleKeys.number.tr(),
                                     style: pdf.TextStyle(
-                                        font: font, fontSize: 15)),
+                                        font: font, fontSize: 13)),
                               )),
                           pdf.SizedBox(
                               width: 45 * PdfPageFormat.mm,
                               child: pdf.Center(
                                 child: pdf.Text(LocaleKeys.product.tr(),
                                     style: pdf.TextStyle(
-                                        font: font, fontSize: 15)),
+                                        font: font, fontSize: 13)),
                               )),
                           pdf.SizedBox(
                               width: 105 * PdfPageFormat.mm,
