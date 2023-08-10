@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/color_name_provider.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
@@ -164,13 +165,25 @@ class BottomSection extends StatelessWidget {
                             )));
               }
             } else {
-              print('select color type');
+              Flushbar(
+                backgroundColor: Theme.of(context).highlightColor,
+                message: 'Select Color Type',
+                duration: const Duration(seconds: 2),
+              ).show(context);
             }
           } else {
-            print('select model');
+            Flushbar(
+              backgroundColor: Theme.of(context).highlightColor,
+              message: 'Select Model',
+              duration: const Duration(seconds: 2),
+            ).show(context);
           }
         } else {
-          print('error occurred');
+          Flushbar(
+            backgroundColor: Theme.of(context).highlightColor,
+            message: 'Fill the Fields',
+            duration: const Duration(seconds: 2),
+          ).show(context);
         }
       },
       child: const Padding(

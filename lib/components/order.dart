@@ -1,12 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:typed_data';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pdf;
+import 'package:pdf_order_creator/service/path_service.dart';
 import 'package:printing/printing.dart';
 
 import 'package:pdf_order_creator/models/component_model.dart';
@@ -71,7 +68,10 @@ class _PDFViewState extends State<PDFView> {
       version: PdfVersion.pdf_1_5,
       compress: true,
     );
-    final font = await PdfGoogleFonts.sansitaRegular();
+    //  final font = await PdfGoogleFonts.sansitaRegular();
+    final ttf = await rootBundle
+        .load('${PathService.FONT_BASE_PATH}Sansita-Regular.ttf');
+    final font = pdf.Font.ttf(ttf);
     document.addPage(
       pdf.Page(
         pageFormat: PdfPageFormat.a4,
@@ -93,7 +93,7 @@ class _PDFViewState extends State<PDFView> {
                     children: [
                       pdf.Center(
                         child: pdf.Padding(
-                          padding: pdf.EdgeInsets.all(5),
+                          padding: const pdf.EdgeInsets.all(5),
                           child: pdf.SizedBox(
                             width: 110 * PdfPageFormat.mm,
                             child: pdf.Text(
@@ -106,12 +106,13 @@ class _PDFViewState extends State<PDFView> {
                       pdf.Table(border: pdf.TableBorder.all(), children: [
                         pdf.TableRow(children: [
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5, top: 20),
+                              padding:
+                                  const pdf.EdgeInsets.only(left: 5, top: 20),
                               child: pdf.Text('Customer Information',
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 20))),
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5),
+                              padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text('''
 Date: $dateTime
 Order Number: xxx-xxx-xxx
@@ -122,13 +123,13 @@ Customer Number: aaa-aaa-aaa
                       pdf.Table(border: pdf.TableBorder.all(), children: [
                         pdf.TableRow(children: [
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5),
+                              padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text(
                                   '${widget.name} ${widget.surname}',
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 16))),
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5),
+                              padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text(widget.phone,
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 16))),
@@ -137,12 +138,12 @@ Customer Number: aaa-aaa-aaa
                       pdf.Table(border: pdf.TableBorder.all(), children: [
                         pdf.TableRow(children: [
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5),
+                              padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text(widget.address,
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 16))),
                           pdf.Padding(
-                              padding: pdf.EdgeInsets.only(left: 5),
+                              padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text(widget.email,
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 16))),

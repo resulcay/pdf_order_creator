@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:pdf_order_creator/service/path_service.dart';
 
 class SelectBox extends StatefulWidget {
@@ -6,14 +8,18 @@ class SelectBox extends StatefulWidget {
   final String componentName;
   final String description;
   final String price;
+  final bool isEnabled;
   final void Function(bool value) onBoolSelected;
-  const SelectBox(
-      {super.key,
-      required this.imagePath,
-      required this.componentName,
-      required this.description,
-      required this.price,
-      required this.onBoolSelected});
+
+  const SelectBox({
+    Key? key,
+    required this.imagePath,
+    required this.componentName,
+    required this.description,
+    required this.price,
+    required this.isEnabled,
+    required this.onBoolSelected,
+  }) : super(key: key);
 
   @override
   State<SelectBox> createState() => _SelectBoxState();
@@ -26,6 +32,7 @@ class _SelectBoxState extends State<SelectBox> {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       value: selection,
+      enabled: widget.isEnabled,
       onChanged: (value) {
         if (value != null) {
           setState(() {
