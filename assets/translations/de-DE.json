@@ -92,10 +92,10 @@
     "tent": "Markise",
     "gasCylinder": "Rohr",
     "wc": "Toilette",
-    "batteryDescription": "105 Amper  AGM JEL Akü",
+    "batteryDescription": "105 Ampere AGM-Gel-Batterie+D24:E39D24:ED24:E40",
     "alkoImpactDescription": "AL-KO Stoßdämpfer (2 Stück)",
     "alkoStabilizerDescription": "AL-KO Stabilisator",
-    "stairsDescription": "THULE YAN BASAMAKLAR(2 ADET)",
+    "stairsDescription": "THULE SEITLICHE STUFEN (2 STÜCK)",
     "refrigeratorDometicDescription": "DOMETİC Gefrierschrank (14L)",
     "refrigeratorDescription": "ICE PEAK Gefrierschrank",
     "exteriorLightingExtraDescription": "Ambiente- und Außenbeleuchtungssystem der Marke Jokon",
@@ -118,6 +118,6 @@
     "waterHeatingSystemDescription": "Truma Term TT Wasserkocher",
     "waterSystemDescription": "60 LT Tankset + Montage",
     "tentDescription": "THULE Markise",
-    "gasCylinderDescription": "Kassetten Toilette (PORTA POTTİ)",
+    "gasCylinderDescription": "Rohr für Küche und Heizung mit speziellem Gaseinlass",
     "wcDescription": "CASSETTE WC (PORTA POTTİ)"
 }

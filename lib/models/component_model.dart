@@ -220,7 +220,6 @@ class Component {
       LocaleKeys.ventilationDometicDescription,
       '375',
       false,
-      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-ORO-14',
@@ -284,7 +283,7 @@ class Component {
       LocaleKeys.swatterDescription,
       '199',
       false,
-      imagePath: 'swatter.png',
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-ORO-22',
@@ -559,7 +558,6 @@ class Component {
       wildDropExtra[11].description,
       wildDropExtra[11].price,
       false,
-      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-MO-1514',
@@ -615,7 +613,7 @@ class Component {
       wildDropExtra[19].description,
       wildDropExtra[19].price,
       false,
-      imagePath: 'swatter.png',
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-MO-1425',

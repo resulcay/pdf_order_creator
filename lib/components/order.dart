@@ -73,6 +73,8 @@ class _PDFViewState extends State<PDFView> {
     final ttf = await rootBundle
         .load('${PathService.FONT_BASE_PATH}Sansita-Regular.ttf');
     final font = pdf.Font.ttf(ttf);
+    final ByteData image = await rootBundle.load('assets/images/caravan.png');
+    Uint8List imageData = (image).buffer.asUint8List();
     document.addPage(
       pdf.Page(
         pageFormat: PdfPageFormat.a4,
@@ -92,18 +94,28 @@ class _PDFViewState extends State<PDFView> {
                   ),
                   child: pdf.Column(
                     children: [
-                      pdf.Center(
-                        child: pdf.Padding(
-                          padding: const pdf.EdgeInsets.all(5),
-                          child: pdf.SizedBox(
-                            width: 110 * PdfPageFormat.mm,
-                            child: pdf.Text(
-                                textAlign: pdf.TextAlign.center,
-                                style: pdf.TextStyle(font: font, fontSize: 22),
-                                '''${LocaleKeys.producer.tr()}: DROP CAMP KARAVAN LTD. ŞTİ. DROP CAMP ${widget.caravanType} DROP AKSARAY-TÜRKİYE Tel: +90 382 3330003  Fax: +90 382 3330004 info@drop-camp.com'''),
+                      pdf.Stack(children: [
+                        pdf.SizedBox(
+                          height: 100,
+                          child: pdf.Align(
+                              alignment: pdf.Alignment.bottomRight,
+                              child: pdf.Image(
+                                  height: 70, pdf.MemoryImage(imageData))),
+                        ),
+                        pdf.Center(
+                          child: pdf.Padding(
+                            padding: const pdf.EdgeInsets.all(5),
+                            child: pdf.SizedBox(
+                              width: 110 * PdfPageFormat.mm,
+                              child: pdf.Text(
+                                  textAlign: pdf.TextAlign.center,
+                                  style:
+                                      pdf.TextStyle(font: font, fontSize: 22),
+                                  '''${LocaleKeys.producer.tr()}: DROP CAMP KARAVAN LTD. ŞTİ. DROP CAMP ${widget.caravanType} DROP AKSARAY-TÜRKİYE Tel: +90 382 3330003  Fax: +90 382 3330004 info@drop-camp.com'''),
+                            ),
                           ),
                         ),
-                      ),
+                      ]),
                       pdf.Table(border: pdf.TableBorder.all(), children: [
                         pdf.TableRow(children: [
                           pdf.Padding(
