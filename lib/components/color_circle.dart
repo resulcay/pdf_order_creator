@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:pdf_order_creator/constants/color_constants.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 
 class ColorCircle extends StatefulWidget {
   final Color color;
@@ -27,7 +29,7 @@ class _ColorCircleState extends State<ColorCircle> {
           showDialog(
             context: context,
             builder: (BuildContext context) => AlertDialog(
-              title: const Text('Colors'),
+              title: Text(LocaleKeys.colors.tr()),
               content: BlockPicker(
                 availableColors: widget.colors,
                 pickerColor: widget.color,

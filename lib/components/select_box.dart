@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pdf_order_creator/service/path_service.dart';
@@ -55,7 +56,7 @@ class _SelectBoxState extends State<SelectBox> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        widget.componentName,
+                        widget.componentName.tr(),
                         style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -71,7 +72,7 @@ class _SelectBoxState extends State<SelectBox> {
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8, left: 8),
-                      child: Text(widget.description,
+                      child: Text(widget.description.tr(),
                           style: const TextStyle(fontWeight: FontWeight.w400)),
                     ),
                   ),

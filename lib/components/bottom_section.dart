@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/color_name_provider.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
@@ -6,6 +7,7 @@ import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/components/order.dart';
 import 'package:pdf_order_creator/enums/color_type_enum.dart';
 import 'package:pdf_order_creator/enums/model_enum.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/models/component_model.dart';
 import 'package:provider/provider.dart';
 
@@ -53,9 +55,9 @@ class BottomSection extends StatelessWidget {
                 switch (colorType) {
                   case ColorType.Single:
                     Component component = Component(
-                      'no code',
-                      'Single Color',
-                      'SINGLE COLOR EXTERIOR BODY($normalColorName)',
+                      LocaleKeys.noCode.tr(),
+                      LocaleKeys.singleColor.tr(),
+                      '${LocaleKeys.singleColor.tr().toUpperCase()} ${LocaleKeys.exterior.tr()}($normalColorName)',
                       '0',
                       true,
                     );
@@ -67,8 +69,8 @@ class BottomSection extends StatelessWidget {
                   case ColorType.Double:
                     Component component = Component(
                       'DRP-ORO-07',
-                      'Double Color',
-                      'DUAL COLOR EXTERIOR BODY(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
+                      LocaleKeys.doubleColor.tr(),
+                      '${LocaleKeys.dualExterior.tr()}(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
                       '799',
                       true,
                     );
@@ -79,8 +81,8 @@ class BottomSection extends StatelessWidget {
                   case ColorType.Metallic:
                     Component component = Component(
                       'DRP-ORO-20',
-                      'Color',
-                      'METALLIC SPECIAL COLOR($metallicColorName)',
+                      LocaleKeys.color.tr(),
+                      '${LocaleKeys.metallicSpecial.tr()}($metallicColorName)',
                       '1750',
                       true,
                     );
@@ -110,9 +112,9 @@ class BottomSection extends StatelessWidget {
                 switch (colorType) {
                   case ColorType.Single:
                     Component component = Component(
-                      'no code',
-                      'Single Color',
-                      'SINGLE COLOR EXTERIOR BODY($normalColorName)',
+                      LocaleKeys.noCode.tr(),
+                      LocaleKeys.singleColor.tr(),
+                      '${LocaleKeys.singleColor.tr().toUpperCase()} ${LocaleKeys.exterior.tr()}($normalColorName)',
                       '0',
                       true,
                     );
@@ -124,8 +126,8 @@ class BottomSection extends StatelessWidget {
                   case ColorType.Double:
                     Component component = Component(
                       'DRP-MO-1207',
-                      'Double Color',
-                      'DUAL COLOR EXTERIOR BODY(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
+                      LocaleKeys.doubleColor.tr(),
+                      '${LocaleKeys.dualExterior.tr()}(Body: $doubleBodyColorName,Frame: $doubleFrameColorName)',
                       '799',
                       true,
                     );
@@ -136,8 +138,8 @@ class BottomSection extends StatelessWidget {
                   case ColorType.Metallic:
                     Component component = Component(
                       'DRP-MO-1220',
-                      'Color',
-                      'METALLIC SPECIAL COLOR($metallicColorName)',
+                      LocaleKeys.color.tr(),
+                      '${LocaleKeys.metallicSpecial.tr()}($metallicColorName)',
                       '1750',
                       true,
                     );
@@ -167,21 +169,21 @@ class BottomSection extends StatelessWidget {
             } else {
               Flushbar(
                 backgroundColor: Theme.of(context).highlightColor,
-                message: 'Select Color Type',
+                message: LocaleKeys.selectColorType.tr(),
                 duration: const Duration(seconds: 2),
               ).show(context);
             }
           } else {
             Flushbar(
               backgroundColor: Theme.of(context).highlightColor,
-              message: 'Select Model',
+              message: LocaleKeys.pleaseSelectModel.tr(),
               duration: const Duration(seconds: 2),
             ).show(context);
           }
         } else {
           Flushbar(
             backgroundColor: Theme.of(context).highlightColor,
-            message: 'Fill the Fields',
+            message: LocaleKeys.field.tr(),
             duration: const Duration(seconds: 2),
           ).show(context);
         }

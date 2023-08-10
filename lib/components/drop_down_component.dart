@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/color_type_provider.dart';
 import 'package:pdf_order_creator/constants/color_constants.dart';
 import 'package:pdf_order_creator/enums/color_type_enum.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:provider/provider.dart';
 
 class DropDownComponent extends StatefulWidget {
@@ -41,9 +43,9 @@ class _DropDownComponentState extends State<DropDownComponent> {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       isExpanded: true,
-      hint: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Text('Select Color Type'),
+      hint: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(LocaleKeys.selectColorType.tr()),
       ),
       borderRadius: BorderRadius.circular(10),
       icon: const Icon(Icons.keyboard_arrow_down_sharp),
@@ -54,9 +56,7 @@ class _DropDownComponentState extends State<DropDownComponent> {
           value: value.name,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              value.name,
-            ),
+            child: Text(value.name),
           ),
         );
       }).toList(),

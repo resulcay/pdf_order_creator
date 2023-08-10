@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pdf;
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/service/path_service.dart';
 import 'package:printing/printing.dart';
 
@@ -99,7 +100,7 @@ class _PDFViewState extends State<PDFView> {
                             child: pdf.Text(
                                 textAlign: pdf.TextAlign.center,
                                 style: pdf.TextStyle(font: font, fontSize: 22),
-                                '''Producer: DROP CAMP KARAVAN LTD. ŞTİ. DROP CAMP WILD DROP AKSARAY-TÜRKİYE Tel: +90 382 3330003  Fax: +90 382 3330004 info@drop-camp.com'''),
+                                '''${LocaleKeys.producer.tr()}: DROP CAMP KARAVAN LTD. ŞTİ. DROP CAMP ${widget.caravanType} DROP AKSARAY-TÜRKİYE Tel: +90 382 3330003  Fax: +90 382 3330004 info@drop-camp.com'''),
                           ),
                         ),
                       ),
@@ -108,15 +109,15 @@ class _PDFViewState extends State<PDFView> {
                           pdf.Padding(
                               padding:
                                   const pdf.EdgeInsets.only(left: 5, top: 20),
-                              child: pdf.Text('Customer Information',
+                              child: pdf.Text(LocaleKeys.customer.tr(),
                                   style:
                                       pdf.TextStyle(font: font, fontSize: 20))),
                           pdf.Padding(
                               padding: const pdf.EdgeInsets.only(left: 5),
                               child: pdf.Text('''
-Date: $dateTime
-Order Number: xxx-xxx-xxx
-Customer Number: aaa-aaa-aaa
+${LocaleKeys.date.tr()}: $dateTime
+${LocaleKeys.orderNumber.tr()}: xxx-xxx-xxx
+${LocaleKeys.customerNumber.tr()}: aaa-aaa-aaa
 ''', style: pdf.TextStyle(font: font, fontSize: 20))),
                         ]),
                       ]),
@@ -153,7 +154,7 @@ Customer Number: aaa-aaa-aaa
                           height: 35,
                           child: pdf.Center(
                               child: pdf.Text(
-                                  'DropCamp ${widget.caravanType} DROP STANDARD EQUIPMENTS',
+                                  'DropCamp ${widget.caravanType} DROP ${LocaleKeys.standardEquipment.tr().toUpperCase()}',
                                   style: pdf.TextStyle(
                                       font: font, fontSize: 22)))),
                       pdf.Table(border: pdf.TableBorder.all(), children: [
@@ -161,28 +162,28 @@ Customer Number: aaa-aaa-aaa
                           pdf.SizedBox(
                               width: 30 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Number',
+                                child: pdf.Text(LocaleKeys.number.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 45 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Product/Service',
+                                child: pdf.Text(LocaleKeys.product.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 105 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Definition',
+                                child: pdf.Text(LocaleKeys.definition.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 25 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Unit Price',
+                                child: pdf.Text(LocaleKeys.unitPrice.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
@@ -213,7 +214,8 @@ Customer Number: aaa-aaa-aaa
                                                 widget
                                                     .standardComponentList[
                                                         index]
-                                                    .name,
+                                                    .name
+                                                    .tr(),
                                                 style: pdf.TextStyle(
                                                     font: font, fontSize: 13)),
                                           )),
@@ -224,7 +226,8 @@ Customer Number: aaa-aaa-aaa
                                                 widget
                                                     .standardComponentList[
                                                         index]
-                                                    .description,
+                                                    .description
+                                                    .tr(),
                                                 style: pdf.TextStyle(
                                                     font: font, fontSize: 11)),
                                           )),
@@ -299,7 +302,7 @@ Customer Number: aaa-aaa-aaa
                           height: 35,
                           child: pdf.Center(
                               child: pdf.Text(
-                                  'DropCamp ${widget.caravanType} DROP EXTRA EQUIPMENTS',
+                                  'DropCamp ${widget.caravanType} DROP ${LocaleKeys.extraEquipment.tr().toUpperCase()}',
                                   style: pdf.TextStyle(
                                       font: font, fontSize: 22)))),
                       pdf.Table(border: pdf.TableBorder.all(), children: [
@@ -307,28 +310,28 @@ Customer Number: aaa-aaa-aaa
                           pdf.SizedBox(
                               width: 30 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Number',
+                                child: pdf.Text(LocaleKeys.number.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 45 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Product/Service',
+                                child: pdf.Text(LocaleKeys.product.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 105 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Definition',
+                                child: pdf.Text(LocaleKeys.definition.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
                           pdf.SizedBox(
                               width: 25 * PdfPageFormat.mm,
                               child: pdf.Center(
-                                child: pdf.Text('Unit Price',
+                                child: pdf.Text(LocaleKeys.unitPrice.tr(),
                                     style: pdf.TextStyle(
                                         font: font, fontSize: 15)),
                               )),
@@ -353,7 +356,9 @@ Customer Number: aaa-aaa-aaa
                                           width: 45 * PdfPageFormat.mm,
                                           child: pdf.Center(
                                             child: pdf.Text(
-                                                selectedComponents[index].name,
+                                                selectedComponents[index]
+                                                    .name
+                                                    .tr(),
                                                 style: pdf.TextStyle(
                                                     font: font, fontSize: 13)),
                                           )),
@@ -362,7 +367,8 @@ Customer Number: aaa-aaa-aaa
                                           child: pdf.Center(
                                             child: pdf.Text(
                                                 selectedComponents[index]
-                                                    .description,
+                                                    .description
+                                                    .tr(),
                                                 style: pdf.TextStyle(
                                                     font: font, fontSize: 11)),
                                           )),

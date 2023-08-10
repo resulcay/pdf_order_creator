@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/animated_textfield.dart';
 import 'package:pdf_order_creator/components/bottom_section.dart';
@@ -8,6 +9,7 @@ import 'package:pdf_order_creator/components/widen_drop_widget.dart';
 import 'package:pdf_order_creator/components/wild_drop_widget.dart';
 import 'package:pdf_order_creator/constants/locale_constants.dart';
 import 'package:pdf_order_creator/enums/model_enum.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/service/path_service.dart';
 import 'package:provider/provider.dart';
 
@@ -63,56 +65,56 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     AnimatedTextField(
-                      label: "Name",
+                      label: LocaleKeys.name.tr(),
                       textController: nameController,
                       function: (text) {
                         text = text?.trim();
                         if (text == null || text.isEmpty) {
-                          return 'Can not be empty';
+                          return LocaleKeys.canNotBeEmpty.tr();
                         }
                         return null;
                       },
                     ),
                     AnimatedTextField(
-                      label: "Surname",
+                      label: LocaleKeys.surname.tr(),
                       textController: surnameController,
                       function: (text) {
                         text = text?.trim();
                         if (text == null || text.isEmpty) {
-                          return 'Can not be empty';
+                          return LocaleKeys.canNotBeEmpty.tr();
                         }
                         return null;
                       },
                     ),
                     AnimatedTextField(
-                      label: "E-mail",
+                      label: LocaleKeys.email.tr(),
                       textController: emailController,
                       function: (text) {
                         text = text?.trim();
                         if (text == null || text.isEmpty) {
-                          return 'Can not be empty';
+                          return LocaleKeys.canNotBeEmpty.tr();
                         }
                         return null;
                       },
                     ),
                     AnimatedTextField(
-                      label: "Phone Number",
+                      label: LocaleKeys.phone.tr(),
                       textController: phoneController,
                       function: (text) {
                         text = text?.trim();
                         if (text == null || text.isEmpty) {
-                          return 'Can not be empty';
+                          return LocaleKeys.canNotBeEmpty.tr();
                         }
                         return null;
                       },
                     ),
                     AnimatedTextField(
-                      label: "Address",
+                      label: LocaleKeys.address.tr(),
                       textController: addressController,
                       function: (text) {
                         text = text?.trim();
                         if (text == null || text.isEmpty) {
-                          return 'Can not be empty';
+                          return LocaleKeys.canNotBeEmpty.tr();
                         }
                         return null;
                       },
@@ -125,9 +127,9 @@ class HomePage extends StatelessWidget {
                       builder: (context, value, child) {
                         switch (value.model) {
                           case Model.none:
-                            return const Text(
-                              'Please Select Model!',
-                              style: TextStyle(fontSize: 17),
+                            return Text(
+                              LocaleKeys.pleaseSelectModel.tr(),
+                              style: const TextStyle(fontSize: 17),
                             );
                           case Model.wildDrop:
                             return const WildDropWidget();

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/color_circle.dart';
 import 'package:pdf_order_creator/components/color_name_provider.dart';
@@ -7,6 +8,7 @@ import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/constants/color_constants.dart';
 import 'package:pdf_order_creator/enums/color_type_enum.dart';
 import 'package:pdf_order_creator/enums/model_enum.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/models/component_model.dart';
 import 'package:provider/provider.dart';
 
@@ -57,7 +59,7 @@ class _ColorSectionState extends State<ColorSection> {
                 child: Row(
                   children: [
                     Text(
-                      'Caravan Color :',
+                      LocaleKeys.caravanColor.tr(),
                       style: Theme.of(context)
                           .textTheme
                           .displaySmall
@@ -120,7 +122,7 @@ class _ColorSectionState extends State<ColorSection> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Body Color :',
+                              LocaleKeys.bodyColor.tr(),
                               style: Theme.of(context)
                                   .textTheme
                                   .displaySmall
@@ -157,7 +159,7 @@ class _ColorSectionState extends State<ColorSection> {
                         Row(
                           children: [
                             Text(
-                              'Frame Color :',
+                              LocaleKeys.frameColor.tr(),
                               style: Theme.of(context)
                                   .textTheme
                                   .displaySmall
@@ -214,7 +216,7 @@ class _ColorSectionState extends State<ColorSection> {
               Row(
                 children: [
                   Text(
-                    'Metallic Color :',
+                    LocaleKeys.metallicColor.tr(),
                     style: Theme.of(context)
                         .textTheme
                         .displaySmall

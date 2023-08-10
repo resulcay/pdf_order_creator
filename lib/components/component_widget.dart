@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_order_creator/components/select_box.dart';
+import 'package:pdf_order_creator/localization/locale_keys.g.dart';
 import 'package:pdf_order_creator/models/component_model.dart';
 
 class ComponentWidget extends StatefulWidget {
@@ -28,12 +30,15 @@ class _ComponentWidgetState extends State<ComponentWidget> {
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Card(
               color: Theme.of(context).highlightColor,
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: Text(
-                    'Extra Components',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    LocaleKeys.extraComponent.tr(),
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
