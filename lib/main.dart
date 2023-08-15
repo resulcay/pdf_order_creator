@@ -6,6 +6,7 @@ import 'package:pdf_order_creator/components/model_provider.dart';
 import 'package:pdf_order_creator/constants/locale_constants.dart';
 import 'package:pdf_order_creator/home_page.dart';
 import 'package:pdf_order_creator/localization/locale_keys.g.dart';
+import 'package:pdf_order_creator/service/mail_service.dart';
 import 'package:pdf_order_creator/service/theme_service.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => ModelProvider()),
         ChangeNotifierProvider(create: (_) => ColorTypeProvider()),
         ChangeNotifierProvider(create: (_) => ColorNameProvider()),
+        ChangeNotifierProvider(create: (_) => MailServiceProvider()),
       ],
       child: EasyLocalization(
         supportedLocales: const [

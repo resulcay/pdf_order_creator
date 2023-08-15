@@ -9,8 +9,8 @@ class WidenDropWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
+    return Column(
+      children: const [
         DropDownComponent(),
         ColorSection(),
       ],
