@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pdf;
 import 'package:pdf_order_creator/localization/locale_keys.g.dart';
-import 'package:pdf_order_creator/service/mail_service.dart';
 import 'package:pdf_order_creator/service/path_service.dart';
 import 'package:printing/printing.dart';
 
@@ -422,10 +421,6 @@ ${LocaleKeys.customerNumber.tr()}: aaa-aaa-aaa
       ),
     );
 
-    return document.save().then((value) {
-      MailServiceProvider().sendMail("gethard", value, context);
-
-      return value;
-    });
+    return document.save();
   }
 }

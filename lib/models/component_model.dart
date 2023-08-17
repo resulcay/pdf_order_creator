@@ -220,6 +220,7 @@ class Component {
       LocaleKeys.ventilationDometicDescription,
       '375',
       false,
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-ORO-14',
@@ -227,7 +228,7 @@ class Component {
       LocaleKeys.ventilationDescription,
       '150',
       false,
-      imagePath: 'square ventilation.jpg',
+      imagePath: 'square ventilation.png',
     ),
     Component(
       'DRP-ORO-15',
@@ -283,7 +284,7 @@ class Component {
       LocaleKeys.swatterDescription,
       '199',
       false,
-      imagePath: 'ventilation.png',
+      imagePath: 'swatter.png',
     ),
     Component(
       'DRP-ORO-22',
@@ -329,7 +330,7 @@ class Component {
       LocaleKeys.tentDescription,
       '1199',
       false,
-      imagePath: 'swatter.png',
+      imagePath: 'tent.png',
     ),
     Component(
       'DRP-ORO-28',
@@ -558,6 +559,7 @@ class Component {
       wildDropExtra[11].description,
       wildDropExtra[11].price,
       false,
+      imagePath: 'ventilation.png',
     ),
     Component(
       'DRP-MO-1514',
@@ -565,7 +567,7 @@ class Component {
       wildDropExtra[12].description,
       wildDropExtra[12].price,
       false,
-      imagePath: 'square ventilation.jpg',
+      imagePath: 'square ventilation.png',
     ),
     Component(
       'DRP-MO-1515',
@@ -613,7 +615,7 @@ class Component {
       wildDropExtra[19].description,
       wildDropExtra[19].price,
       false,
-      imagePath: 'ventilation.png',
+      imagePath: 'swatter.png',
     ),
     Component(
       'DRP-MO-1425',
@@ -637,7 +639,7 @@ class Component {
       wildDropExtra[25].description,
       wildDropExtra[25].price,
       false,
-      imagePath: 'swatter.png',
+      imagePath: 'tent.png',
     ),
     Component(
       'DRP-MO-1328',

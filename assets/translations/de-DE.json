@@ -90,7 +90,7 @@
     "waterHeatingSystem": "Heizung",
     "waterSystem": "Wassersystem",
     "tent": "Markise",
-    "gasCylinder": "Rohr",
+    "gasCylinder": "Gaszylinder ",
     "wc": "Toilette",
     "batteryDescription": "105 Ampere AGM-Gel-Batterie+D24:E39D24:ED24:E40",
     "alkoImpactDescription": "AL-KO Stoßdämpfer (2 Stück)",
@@ -118,6 +118,6 @@
     "waterHeatingSystemDescription": "Truma Term TT Wasserkocher",
     "waterSystemDescription": "60 LT Tankset + Montage",
     "tentDescription": "THULE Markise",
-    "gasCylinderDescription": "Rohr für Küche und Heizung mit speziellem Gaseinlass",
+    "gasCylinderDescription": "Gaszylinder für Küche und Heizung mit speziellem Gaseinlass",
     "wcDescription": "CASSETTE WC (PORTA POTTİ)"
 }
